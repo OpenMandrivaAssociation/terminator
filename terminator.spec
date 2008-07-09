@@ -1,5 +1,5 @@
 %define name terminator
-%define version 0.8.1
+%define version 0.9
 %define release %mkrel 1
 
 Summary: A simple way to run multiple terminals in a single window
@@ -24,13 +24,10 @@ widget used by gnome-terminal.
 %prep
 %setup -q -n %{name}-%{version}
 
-%build
-%__python setup.py build
-
 %install
 %__rm -rf %{buildroot}
 %__python setup.py install --root=%{buildroot} --record=FILELIST.tmp
-grep -v man/man1 FILELIST.tmp > FILELIST
+grep -v man/man FILELIST.tmp > FILELIST
 
 %clean
 %__rm -rf %{buildroot}
@@ -38,5 +35,5 @@ grep -v man/man1 FILELIST.tmp > FILELIST
 %files -f FILELIST
 %defattr(-,root,root)
 %doc README COPYING ChangeLog
-%{_mandir}/man1/terminator.*
+%{_mandir}/man*/*
 
