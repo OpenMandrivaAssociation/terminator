@@ -1,5 +1,5 @@
 %define name terminator
-%define version 0.10
+%define version 0.11
 %define release %mkrel 1
 
 Summary: A simple way to run multiple terminals in a single window
@@ -12,7 +12,7 @@ Group: Terminals
 Url: http://www.tenshu.net/terminator/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
-Requires: python, python-vte
+Requires: python, python-vte, gtk+2.0
 BuildRequires: python-devel
 
 %description 
@@ -26,9 +26,15 @@ widget used by gnome-terminal.
 
 %install
 %__rm -rf %{buildroot}
-%__python setup.py install --root=%{buildroot}
+%__python setup.py --without-icon-cache install --root=%{buildroot}
 
 %find_lang %name
+
+%post
+gtk-update-icon-cache -q -f %_iconsdir/hicolor
+
+%postun
+gtk-update-icon-cache -q -f %_iconsdir/hicolor
 
 %clean
 %__rm -rf %{buildroot}
