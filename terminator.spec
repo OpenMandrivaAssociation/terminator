@@ -1,6 +1,6 @@
 %define name terminator
 %define version 0.11
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: A simple way to run multiple terminals in a single window
 Name: %{name}
@@ -12,8 +12,8 @@ Group: Terminals
 Url: http://www.tenshu.net/terminator/
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
-Requires: python, python-vte, gtk+2.0
-BuildRequires: python-devel
+Requires: python-vte, gtk+2.0
+%py_requires -d
 
 %description 
 Terminator is an attempt to maximise useful space on a given desktop
