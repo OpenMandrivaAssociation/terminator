@@ -1,18 +1,18 @@
-%define name terminator
-%define version 0.11
-%define release %mkrel 2
+%define name	terminator
+%define version 0.12
+%define release %mkrel 1
 
-Summary: A simple way to run multiple terminals in a single window
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: http://launchpad.net/terminator/trunk/0.10/+download/%{name}_%{version}.tar.gz
-License: GPLv2+
-Group: Terminals
-Url: http://www.tenshu.net/terminator/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildArch: noarch
-Requires: python-vte, gtk+2.0
+Summary:	A simple way to run multiple terminals in a single window
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Source0:	http://launchpad.net/terminator/trunk/0.10/+download/%{name}_%{version}.tar.gz
+License:	GPLv2+
+Group:		Terminals
+Url:		http://www.tenshu.net/terminator/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildArch:	noarch
+Requires:	python-vte, gtk+2.0
 %py_requires -d
 
 %description 
