@@ -14,6 +14,7 @@ Url:		http://www.tenshu.net/terminator/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 Requires:	python-vte, gtk+2.0, gnome-python-gnomevfs
+BuildRequires:	intltool
 %py_requires -d
 
 %description 
