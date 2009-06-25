@@ -1,13 +1,14 @@
 %define name	terminator
-%define version 0.12
-%define release %mkrel 2
+%define version 0.13
+%define release %mkrel 1
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	http://launchpad.net/terminator/trunk/0.10/+download/%{name}_%{version}.tar.gz
-License:	GPLv2+
+Source0:	http://launchpad.net/terminator/trunk/%{version}/+download/%{name}_%{version}.tar.gz
+Patch0:		terminator.patch
+License:	GPLv2
 Group:		Terminals
 Url:		http://www.tenshu.net/terminator/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -22,7 +23,8 @@ widgets (the same used by gnome-terminal) in a window. That's the same
 widget used by gnome-terminal.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q -n %{version}
+%patch0 -p0
 
 %install
 %__rm -rf %{buildroot}
