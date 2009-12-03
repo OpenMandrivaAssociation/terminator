@@ -1,5 +1,5 @@
 %define name	terminator
-%define version 0.13
+%define version 0.14
 %define release %mkrel 1
 
 Summary:	A simple way to run multiple terminals in a single window
@@ -24,8 +24,7 @@ widgets (the same used by gnome-terminal) in a window. That's the same
 widget used by gnome-terminal.
 
 %prep
-%setup -q -n %{version}
-%patch0 -p0
+%setup -q -n %{name}-%{version}
 
 %install
 %__rm -rf %{buildroot}
