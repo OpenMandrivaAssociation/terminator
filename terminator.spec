@@ -1,13 +1,12 @@
 %define name	terminator
-%define version 0.14
+%define version 0.91
 %define release %mkrel 1
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-Source0:	http://launchpad.net/terminator/trunk/%{version}/+download/%{name}_%{version}.tar.gz
-Patch0:		terminator.patch
+Source0:        http://launchpad.net/terminator/trunk/%{version}/+download/%{name}-%{version}.tar.gz
 License:	GPLv2
 Group:		Terminals
 Url:		http://www.tenshu.net/terminator/
@@ -28,15 +27,15 @@ widget used by gnome-terminal.
 
 %install
 %__rm -rf %{buildroot}
-%__python setup.py --without-icon-cache install --root=%{buildroot}
+PYTHONDONTWRITEBYTECODE= %__python setup.py --without-icon-cache install --root=%{buildroot}
 
 %find_lang %name
 
 %post
-gtk-update-icon-cache -q -f %_iconsdir/hicolor
+gtk-update-icon-cache -qf %_iconsdir/hicolor &>/dev/null || :
 
 %postun
-gtk-update-icon-cache -q -f %_iconsdir/hicolor
+gtk-update-icon-cache -qf %_iconsdir/hicolor &>/dev/null || :
 
 %clean
 %__rm -rf %{buildroot}
@@ -44,10 +43,12 @@ gtk-update-icon-cache -q -f %_iconsdir/hicolor
 %files -f %name.lang
 %defattr(-,root,root)
 %doc README COPYING ChangeLog
-%{_mandir}/man*/*
-%{_bindir}/*
+%{_mandir}/man1/%{name}.*
+%{_mandir}/man5/%{name}_config.*
+%{_bindir}/%{name}
 %{python_sitelib}/Terminator*.egg-info
 %{python_sitelib}/terminatorlib
 %{_datadir}/applications/*.desktop
-%{_iconsdir}/hicolor/*/*/*
-%{_datadir}/pixmaps/*
+%{_iconsdir}/hicolor/*/*/*.png
+%{_iconsdir}/hicolor/*/*/%{name}*.svg
+%{_datadir}/pixmaps/%{name}.png
