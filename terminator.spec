@@ -1,12 +1,13 @@
 %define name	terminator
 %define version 0.92
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:        http://launchpad.net/terminator/trunk/%{version}/+download/%{name}-%{version}.tar.gz
+Patch0:		alt-arrow.patch
 License:	GPLv2
 Group:		Terminals
 Url:		http://www.tenshu.net/terminator/
@@ -24,6 +25,7 @@ widget used by gnome-terminal.
 
 %prep
 %setup -q -n %{name}-%{version}
+%patch0 -p0 
 
 %install
 %__rm -rf %{buildroot}
