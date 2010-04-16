@@ -1,13 +1,12 @@
 %define name	terminator
-%define version 0.92
-%define release %mkrel 2
+%define version 0.93
+%define release %mkrel 1
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:        http://launchpad.net/terminator/trunk/%{version}/+download/%{name}-%{version}.tar.gz
-Patch0:		alt-arrow.patch
 License:	GPLv2
 Group:		Terminals
 Url:		http://www.tenshu.net/terminator/
@@ -25,19 +24,12 @@ widget used by gnome-terminal.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p0 
 
 %install
 %__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %__python setup.py --without-icon-cache install --root=%{buildroot}
 
 %find_lang %name
-
-%post
-gtk-update-icon-cache -qf %_iconsdir/hicolor &>/dev/null || :
-
-%postun
-gtk-update-icon-cache -qf %_iconsdir/hicolor &>/dev/null || :
 
 %clean
 %__rm -rf %{buildroot}
