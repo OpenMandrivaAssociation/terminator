@@ -1,5 +1,5 @@
 %define name	terminator
-%define version 0.94
+%define version 0.95
 %define release %mkrel 1
 
 Summary:	A simple way to run multiple terminals in a single window
