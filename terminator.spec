@@ -1,6 +1,6 @@
 %define name	terminator
 %define version 0.95
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		%{name}
@@ -14,7 +14,6 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 Requires:	python-vte, gtk+2.0, gnome-python-gnomevfs
 BuildRequires:	intltool
-%py_requires -d
 
 %description 
 Terminator is an attempt to maximise useful space on a given desktop
