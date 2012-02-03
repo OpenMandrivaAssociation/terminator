@@ -1,6 +1,6 @@
 %define name	terminator
 %define version 0.96
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		%{name}
@@ -9,10 +9,11 @@ Release:	%{release}
 Source0:	http://launchpad.net/terminator/trunk/%{version}/+download/%{name}_%{version}.tar.gz
 License:	GPLv2
 Group:		Terminals
-Url:		http://www.tenshu.net/terminator/
+Url:		http://www.tenshu.net/p/terminator/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 Requires:	python-vte, gtk+2.0, gnome-python-gnomevfs
+Suggests:	python-keybinder, python-notify
 BuildRequires:	intltool
 
 %description 
