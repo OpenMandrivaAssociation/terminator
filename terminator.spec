@@ -1,16 +1,12 @@
-%define name	terminator
-%define version 0.96
-%define release %mkrel 2
 
 Summary:	A simple way to run multiple terminals in a single window
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Source0:	http://launchpad.net/terminator/trunk/%{version}/+download/%{name}_%{version}.tar.gz
+Name:		terminator
+Version:	0.97
+Release:	1
+Source0:	https://launchpad.net/terminator/trunk/0.97/+download/%{name}-%{version}.tar.gz
 License:	GPLv2
 Group:		Terminals
 Url:		http://www.tenshu.net/p/terminator/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 Requires:	python-vte, gtk+2.0, gnome-python-gnomevfs
 Suggests:	python-keybinder, python-notify
@@ -26,26 +22,24 @@ widget used by gnome-terminal.
 %setup -q -n %{name}-%{version}
 
 %install
-%__rm -rf %{buildroot}
 PYTHONDONTWRITEBYTECODE= %__python setup.py --without-icon-cache install --root=%{buildroot}
 
 %find_lang %name
 
 %clean
-%__rm -rf %{buildroot}
 
 %files -f %name.lang
-%defattr(-,root,root)
 %doc README COPYING ChangeLog
 %{_mandir}/man1/%{name}.*
 %{_mandir}/man5/%{name}_config.*
 %{_bindir}/%{name}
-%{python_sitelib}/Terminator*.egg-info
-%{python_sitelib}/terminatorlib
+%{py_puresitedir}/Terminator*.egg-info
+%{py_puresitedir}/terminatorlib
 %{_datadir}/applications/*.desktop
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/*/%{name}*.svg
 %{_datadir}/pixmaps/%{name}.png
+%{_bindir}/remotinator
 
 
 %changelog
@@ -130,3 +124,4 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py --without-icon-cache install --root=
 
 * Thu May 15 2008 Lev Givon <lev@mandriva.org> 0.8.1-1mdv2008.1
 - Package for Mandriva.
+
