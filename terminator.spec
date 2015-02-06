@@ -2,7 +2,7 @@
 Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
 Version:	0.97
-Release:	1
+Release:	2
 Source0:	https://launchpad.net/terminator/trunk/0.97/+download/%{name}-%{version}.tar.gz
 License:	GPLv2
 Group:		Terminals
