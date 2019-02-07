@@ -2,7 +2,7 @@
 Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
 Version:	0.97
-Release:	2
+Release:	3
 Source0:	https://launchpad.net/terminator/trunk/0.97/+download/%{name}-%{version}.tar.gz
 License:	GPLv2
 Group:		Terminals
@@ -22,7 +22,7 @@ widget used by gnome-terminal.
 %setup -q -n %{name}-%{version}
 
 %install
-PYTHONDONTWRITEBYTECODE= %__python setup.py --without-icon-cache install --root=%{buildroot}
+PYTHONDONTWRITEBYTECODE= %__python2 setup.py --without-icon-cache install --root=%{buildroot}
 
 %find_lang %name
 
