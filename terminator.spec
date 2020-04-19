@@ -1,16 +1,22 @@
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
-Version:	0.97
-Release:	3
-Source0:	https://launchpad.net/terminator/trunk/0.97/+download/%{name}-%{version}.tar.gz
 License:	GPLv2
 Group:		Terminals
-Url:		http://www.tenshu.net/p/terminator/
+Release:	1
+Version:	1.92
+Url:            https://github.com/gnome-terminator
+Source0:        https://github.com/gnome-terminator/terminator/releases/download/v%{version}/%{name}-%{version}.tar.gz
+
 BuildArch:	noarch
-Requires:	python-vte, gtk+2.0, gnome-python-gnomevfs
-Suggests:	python-keybinder, python-notify
+
 BuildRequires:	intltool
+BuildRequires:	pkgconfig(python)
+
+Requires:	python3dist(pycairo)
+Requires:	python3dist(configobj)
+Requires:	python3dist(pygobject)
+Requires:	python3dist(psutil)
 
 %description 
 Terminator is an attempt to maximise useful space on a given desktop
@@ -19,27 +25,34 @@ widgets (the same used by gnome-terminal) in a window. That's the same
 widget used by gnome-terminal.
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -p1
+
+%build
+%py_build
 
 %install
-PYTHONDONTWRITEBYTECODE= %__python2 setup.py --without-icon-cache install --root=%{buildroot}
+%py_install
 
-%find_lang %name
+%find_lang %{name}
 
-%clean
-
-%files -f %name.lang
-%doc README COPYING ChangeLog
-%{_mandir}/man1/%{name}.*
-%{_mandir}/man5/%{name}_config.*
+%files -f %{name}.lang
+%doc AUTHORS CHANGELOG.md
+%license COPYING
 %{_bindir}/%{name}
-%{py_puresitedir}/Terminator*.egg-info
-%{py_puresitedir}/terminatorlib
-%{_datadir}/applications/*.desktop
+%{_bindir}/%{name}.wrapper
+%{_bindir}/remotinator
+%{_datadir}/%{name}/
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/pixmaps/%{name}.png
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/*/%{name}*.svg
-%{_datadir}/pixmaps/%{name}.png
-%{_bindir}/remotinator
+%{_iconsdir}/HighContrast/*/*/*.png
+%{_iconsdir}/HighContrast/*/*/%{name}*.svg
+%{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
+%{python_sitelib}/terminatorlib/
+%{_mandir}/man1/%{name}.*
+%{_mandir}/man5/%{name}_config.*
 
 
 %changelog
