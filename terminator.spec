@@ -13,11 +13,11 @@ BuildArch:	noarch
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(python)
 
-Requires:	python3dist(pycairo)
-Requires:	python3dist(configobj)
-Requires:	python3dist(pygobject)
-Requires:	python3dist(psutil)
-Requires: python3dist(setuptools)
+Requires: python3dist(pycairo)
+Requires: python3dist(configobj)
+Requires: python3dist(pygobject)
+Requires: python3dist(psutil)
+Requires: python-setuptools
 
 %description 
 Terminator is an attempt to maximise useful space on a given desktop
