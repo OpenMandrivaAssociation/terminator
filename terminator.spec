@@ -20,6 +20,7 @@ Requires: python3dist(configobj)
 Requires: python3dist(pygobject)
 Requires: python3dist(psutil)
 Requires: python-setuptools
+Requires: python-dbus
 
 %description 
 Terminator is an attempt to maximise useful space on a given desktop
