@@ -37,14 +37,12 @@ widget used by gnome-terminal.
 %py_install
 
 %files
-%doc AUTHORS CHANGELOG.md
-%license COPYING
 %{_bindir}/%{name}
-%{_bindir}/%{name}.wrapper
+#{_bindir}/%{name}.wrapper
 %{_bindir}/remotinator
-%{_datadir}/%{name}/
+#{_datadir}/%{name}/
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/appdata/%{name}.appdata.xml
+#{_datadir}/appdata/%{name}.appdata.xml
 %{_datadir}/pixmaps/%{name}.png
 %{_iconsdir}/hicolor/*/*/*.png
 %{_iconsdir}/hicolor/*/*/%{name}*.svg
