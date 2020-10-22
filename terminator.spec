@@ -36,9 +36,7 @@ widget used by gnome-terminal.
 %install
 %py_install
 
-%find_lang %{name}
-
-%files -f %{name}.lang
+%files -f
 %doc AUTHORS CHANGELOG.md
 %license COPYING
 %{_bindir}/%{name}
