@@ -12,6 +12,7 @@ BuildArch:	noarch
 
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(python)
+BuildRequires:	python3dist(pytest-runner)
 
 Requires: python3dist(pycairo)
 Requires: python3dist(configobj)
