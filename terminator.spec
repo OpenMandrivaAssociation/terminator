@@ -51,6 +51,8 @@ widget used by gnome-terminal.
 %{python_sitelib}/terminatorlib/
 %{_mandir}/man1/%{name}.*
 %{_mandir}/man5/%{name}_config.*
+%{_datadir}/locale/*/LC_MESSAGES/terminator.mo
+%{_datadir}/terminator/terminatorlib/themes/*
 
 
 %changelog
