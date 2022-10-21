@@ -3,8 +3,8 @@ Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
 License:	GPLv2
 Group:		Terminals
-Release:	2
-Version:	2.1.1
+Release:	1
+Version:	2.1.2
 Url:            https://github.com/gnome-terminator
 Source0:        https://github.com/gnome-terminator/terminator/releases/download/v%{version}/%{name}-%{version}.tar.gz
 
