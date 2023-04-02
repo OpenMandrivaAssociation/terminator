@@ -1,9 +1,8 @@
-
 Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
 License:	GPLv2
 Group:		Terminals
-Release:	2
+Release:	3
 Version:	2.1.3
 Url:            https://github.com/gnome-terminator
 Source0:        https://github.com/gnome-terminator/terminator/releases/download/v%{version}/%{name}-%{version}.tar.gz
@@ -12,16 +11,19 @@ BuildArch:	noarch
 
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(python)
-BuildRequires:	python3dist(pytest-runner)
-BuildRequires:  python-setuptools
+BuildRequires:	python%{py_ver}dist(pytest-runner)
+BuildRequires:  python%{py_ver}dist(setuptools)
 
-Requires: python3dist(pycairo)
-Requires: python3dist(configobj)
-Requires: python3dist(pygobject)
-Requires: python3dist(psutil)
-Requires: python-setuptools
-Requires: python-dbus
+Requires: python%{py_ver}dist(configobj)
+Requires: python%{py_ver}dist(dbus-python)
+Requires: python%{py_ver}dist(pycairo)
+Requires: python%{py_ver}dist(pygobject)
+Requires: python%{py_ver}dist(psutil)
+Requires: python%{py_ver}dist(setuptools)
 Requires: typelib(Vte) = 2.91
+
+Suggests: typelib(Notify)
+Suggests: typelib(Keybinder)
 
 %description 
 Terminator is an attempt to maximise useful space on a given desktop
@@ -48,7 +50,7 @@ widget used by gnome-terminal.
 %{_iconsdir}/hicolor/*/*/%{name}*.svg
 %{_iconsdir}/HighContrast/*/*/*.png
 %{_iconsdir}/HighContrast/*/*/%{name}*.svg
-%{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
+%{python_sitelib}/%{name}-%{version}-py%{python_version}.*-info
 %{python_sitelib}/terminatorlib/
 %{_mandir}/man1/%{name}.*
 %{_mandir}/man5/%{name}_config.*
