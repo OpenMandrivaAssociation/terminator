@@ -2,7 +2,7 @@ Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
 License:	GPLv2
 Group:		Terminals
-Release:	3
+Release:	4
 Version:	2.1.3
 Url:            https://github.com/gnome-terminator
 Source0:        https://github.com/gnome-terminator/terminator/releases/download/v%{version}/%{name}-%{version}.tar.gz
@@ -14,12 +14,14 @@ BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{py_ver}dist(pytest-runner)
 BuildRequires:  python%{py_ver}dist(setuptools)
 
-Requires: python%{py_ver}dist(configobj)
-Requires: python%{py_ver}dist(dbus-python)
-Requires: python%{py_ver}dist(pycairo)
-Requires: python%{py_ver}dist(pygobject)
-Requires: python%{py_ver}dist(psutil)
-Requires: python%{py_ver}dist(setuptools)
+Requires:	keybinder
+Requires:	python%{py_ver}dist(configobj)
+Requires:	python%{py_ver}dist(dbus-python)
+Requires:	python%{py_ver}dist(pycairo)
+Requires:	python%{py_ver}dist(pygobject)
+Requires:	python%{py_ver}dist(psutil)
+Requires:	vte
+#Requires: python%{py_ver}dist(setuptools)
 Requires: typelib(Vte) = 2.91
 
 Suggests: typelib(Notify)
