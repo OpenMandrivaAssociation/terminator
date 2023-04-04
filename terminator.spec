@@ -16,16 +16,16 @@ BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{py_ver}dist(pytest-runner)
 BuildRequires:	python%{py_ver}dist(setuptools)
 %if %{with tests}
+BuildRequires:	python%{py_ver}dist(configobj)
+BuildRequires:	python%{py_ver}dist(dbus-python)
+BuildRequires:	python%{py_ver}dist(pycairo)
+BuildRequires:	python%{py_ver}dist(pygobject)
+BuildRequires:	python%{py_ver}dist(psutil)
 BuildRequires:	python%{py_ver}dist(pytest)
 BuildRequires:  x11-server-xvfb
 %endif
 
 Requires:	keybinder
-#Requires:	python%{py_ver}dist(configobj)
-#Requires:	python%{py_ver}dist(dbus-python)
-#Requires:	python%{py_ver}dist(pycairo)
-#Requires:	python%{py_ver}dist(pygobject)
-#Requires:	python%{py_ver}dist(psutil)
 Requires:	vte
 Requires:	typelib(Vte) = 2.91
 Requires:	typelib(Notify)
