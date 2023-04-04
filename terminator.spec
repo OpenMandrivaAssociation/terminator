@@ -17,6 +17,7 @@ BuildRequires:	python%{py_ver}dist(pytest-runner)
 BuildRequires:	python%{py_ver}dist(setuptools)
 %if %{with tests}
 BuildRequires:	python%{py_ver}dist(pytest)
+BuildRequires:  x11-server-xvfb
 %endif
 
 Requires:	keybinder
