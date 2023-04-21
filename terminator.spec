@@ -1,4 +1,4 @@
-%bcond_without	tests
+%bcond_with	tests
 
 Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
@@ -13,7 +13,7 @@ BuildArch:	noarch
 
 BuildRequires:	intltool
 BuildRequires:	pkgconfig(python)
-BuildRequires:	python%{py_ver}dist(pytest-runner)
+#BuildRequires:	python%{py_ver}dist(pytest-runner)
 BuildRequires:	python%{py_ver}dist(setuptools)
 BuildRequires:	python%{py_ver}dist(pip)
 BuildRequires:	python%{py_ver}dist(wheel)
