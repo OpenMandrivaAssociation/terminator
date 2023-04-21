@@ -15,6 +15,8 @@ BuildRequires:	intltool
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python%{py_ver}dist(pytest-runner)
 BuildRequires:	python%{py_ver}dist(setuptools)
+BuildRequires:	python%{py_ver}dist(pip)
+BuildRequires:	python%{py_ver}dist(wheel)
 %if %{with tests}
 BuildRequires:	python%{py_ver}dist(configobj)
 BuildRequires:	python%{py_ver}dist(dbus-python)
