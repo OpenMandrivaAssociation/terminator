@@ -28,7 +28,7 @@ BuildRequires:  x11-server-xvfb
 %endif
 
 Requires:	keybinder
-Requires:	vte
+Requires:	vte3
 Requires:	typelib(Vte) = 2.91
 Requires:	typelib(Notify)
 Requires:	typelib(Keybinder)
