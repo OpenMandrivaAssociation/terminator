@@ -4,7 +4,7 @@ Summary:	A simple way to run multiple terminals in a single window
 Name:		terminator
 License:	GPLv2
 Group:		Terminals
-Release:	2
+Release:	3
 Version:	2.1.4
 Url:            https://github.com/gnome-terminator
 Source0:        https://github.com/gnome-terminator/terminator/releases/download/v%{version}/%{name}-%{version}.tar.gz
@@ -32,6 +32,10 @@ Requires:	vte3
 Requires:	typelib(Vte) = 2.91
 Requires:	typelib(Notify)
 Requires:	typelib(Keybinder)
+Requires: typelib(GdkPixbuf)
+Requires: python-gi
+Requires: python-gobject3
+
 
 %description 
 Terminator is an attempt to maximise useful space on a given desktop
