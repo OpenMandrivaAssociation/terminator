@@ -5,7 +5,7 @@ Name:		terminator
 License:	GPLv2
 Group:		Terminals
 Version:	2.1.5
-Release:	1
+Release:	2
 Url:            https://github.com/gnome-terminator
 Source0:        https://github.com/gnome-terminator/terminator/releases/download/v%{version}/%{name}-%{version}.tar.gz
 
