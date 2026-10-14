@@ -5,25 +5,25 @@ Name:		terminator
 License:	GPLv2
 Group:		Terminals
 Version:	2.1.6
-Release:	1
+Release:	2
 Url:            https://github.com/gnome-terminator
 Source0:        https://github.com/gnome-terminator/terminator/releases/download/v%{version}/%{name}-%{version}.tar.gz
 
 BuildArch:	noarch
 
 BuildRequires:	intltool
-BuildRequires:	pkgconfig(python)
-#BuildRequires:	python%{py_ver}dist(pytest-runner)
-BuildRequires:	python%{py_ver}dist(setuptools)
-BuildRequires:	python%{py_ver}dist(pip)
-BuildRequires:	python%{py_ver}dist(wheel)
+BuildRequires:	pkgconfig(python3)
+#BuildRequires:	python%{pyver}dist(pytest-runner)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(wheel)
 %if %{with tests}
-BuildRequires:	python%{py_ver}dist(configobj)
-BuildRequires:	python%{py_ver}dist(dbus-python)
-BuildRequires:	python%{py_ver}dist(pycairo)
-BuildRequires:	python%{py_ver}dist(pygobject)
-BuildRequires:	python%{py_ver}dist(psutil)
-BuildRequires:	python%{py_ver}dist(pytest)
+BuildRequires:	python%{pyver}dist(configobj)
+BuildRequires:	python%{pyver}dist(dbus-python)
+BuildRequires:	python%{pyver}dist(pycairo)
+BuildRequires:	python%{pyver}dist(pygobject)
+BuildRequires:	python%{pyver}dist(psutil)
+BuildRequires:	python%{pyver}dist(pytest)
 BuildRequires:  x11-server-xvfb
 %endif
 
